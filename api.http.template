@@ -1,0 +1,26 @@
+# Finance Tracker API Testing Template
+# Copy this file to api.http and replace placeholder values
+
+### Register User
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+
+{
+    "username": "YOUR_USERNAME",
+    "email": "your.email@example.com",
+    "password": "YOUR_PASSWORD"
+}
+
+### Login User
+POST http://localhost:8080/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "usernameOrEmail": "YOUR_USERNAME_OR_EMAIL",
+    "password": "YOUR_PASSWORD"
+}
+
+### Instructions:
+# 1. Copy this file: cp api.http.template api.http
+# 2. Replace placeholder values with real test data
+# 3. Never commit api.http to git (it's in .gitignore)

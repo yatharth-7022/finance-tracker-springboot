@@ -2,6 +2,7 @@ package com.yatharth.finance_tracker.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,6 +23,8 @@ public class User {
     private String email;
     @Column(nullable = false)
     private String password;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Category> categories = new ArrayList<>();
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     List<Transaction> transactions;
 

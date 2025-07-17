@@ -13,7 +13,14 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Enumerated(EnumType.STRING)
+
     @Column(nullable = false)
-    private TransactionType type;
+    private String name;
+    // INCOME or EXPENSE
+    @Column(nullable = false)
+    private String type;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 }

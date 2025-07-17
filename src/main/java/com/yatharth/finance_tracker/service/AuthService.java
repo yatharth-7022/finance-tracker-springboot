@@ -4,6 +4,8 @@ import com.yatharth.finance_tracker.dto.AuthResponse;
 import com.yatharth.finance_tracker.dto.LoginRequest;
 import com.yatharth.finance_tracker.dto.RegisterRequest;
 import com.yatharth.finance_tracker.entity.User;
+import com.yatharth.finance_tracker.exception.InvalidCredentialsException;
+import com.yatharth.finance_tracker.exception.UserNotFoundException;
 import com.yatharth.finance_tracker.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,10 +28,11 @@ public class AuthService {
     public AuthResponse login(LoginRequest request) {
         User user = userRepository.findByUsername(request.getUsernameOrEmail())
                 .or(() -> userRepository.findByEmail(request.getUsernameOrEmail()))
-                .orElseThrow(() -> new RuntimeException("User Not Found"));
+                .orElseThrow(() -> new UserNotFoundException("User Not Found"));
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
-            throw new RuntimeException("Invalid credentials");
+            System.out.println("password did not match");
+            throw new InvalidCredentialsException("Invalid credentials");
         }
 
         String token = jwtService.generateToken(user);

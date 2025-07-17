@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Repository
-public interface TransactionRepository extends JpaRepository<Transaction,Long> {
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
     List<Transaction> findByUser(User user);
-    List<Transaction> findByUserAndDateBetween(User user,LocalDate start ,LocalDate end );
+    List<Transaction> findByUserOrderByDateDesc(User user);
 }

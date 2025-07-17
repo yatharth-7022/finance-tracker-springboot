@@ -1,9 +1,10 @@
 package com.yatharth.finance_tracker.entity;
 
+import com.yatharth.finance_tracker.enums.TransactionType;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "transactions")
@@ -17,7 +18,7 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    private String description;
 
     @Column(nullable = false)
     private double amount;
@@ -26,7 +27,7 @@ public class Transaction {
     private TransactionType type;
 
     @Column(nullable = false)
-    private LocalDate date;
+    private LocalDateTime date;
 
     @ManyToOne
     @JoinColumn(name="category_id")

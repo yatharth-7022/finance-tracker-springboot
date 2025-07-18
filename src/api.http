@@ -9,13 +9,26 @@
 #}
 
 ### Login User
-#POST http://localhost:8080/api/v1/auth/login
+POST http://localhost:8080/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "usernameOrEmail": "yatharth",
+    "password": "123456"
+}
+
+#### Create Category
+#@jwt = {{login.response.body.data.token}}
+#@userId = {{login.response.body.data.userId}}
+#POST http://localhost:8080/api/v1/category/create
+#Authorization: Bearer {}
 #Content-Type: application/json
 #
 #{
-#  "usernameOrEmail": "ada",
-#    "password": "123456"
+#  "name": "Food",
+#  "type": "EXPENSE"
 #}
-GET http://localhost:8080/api/v1/category
-Content-Type: application/json
-
+#
+#### Get All Categories
+#GET http://localhost:8080/api/v1/category
+#Authorization: Bearer {{jwt}}

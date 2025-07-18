@@ -4,7 +4,7 @@ import com.yatharth.finance_tracker.dto.ApiResponse;
 import com.yatharth.finance_tracker.dto.AuthResponse;
 import com.yatharth.finance_tracker.dto.LoginRequest;
 import com.yatharth.finance_tracker.dto.RegisterRequest;
-import com.yatharth.finance_tracker.service.AuthService;
+import com.yatharth.finance_tracker.service.AuthServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 public class AuthController {
-    private final AuthService authService;
+    private final AuthServiceImpl authService;
 
     @PostMapping("/register")
     public ResponseEntity<ApiResponse<AuthResponse>> register(@Valid @RequestBody RegisterRequest request){

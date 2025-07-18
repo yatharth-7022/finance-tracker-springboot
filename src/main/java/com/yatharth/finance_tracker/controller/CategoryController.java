@@ -5,6 +5,7 @@ import com.yatharth.finance_tracker.dto.CategoryRequest;
 import com.yatharth.finance_tracker.dto.CategoryResponse;
 import com.yatharth.finance_tracker.dto.DeleteResponse;
 import com.yatharth.finance_tracker.service.CategoryService;
+import com.yatharth.finance_tracker.service.CategoryServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

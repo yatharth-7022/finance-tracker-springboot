@@ -1,12 +1,12 @@
-package com.yatharth.finance_tracker.service;
+package com.yatharth.finance_tracker.service.category;
 
-import com.yatharth.finance_tracker.dto.CategoryRequest;
-import com.yatharth.finance_tracker.dto.CategoryResponse;
-import com.yatharth.finance_tracker.dto.DeleteResponse;
+import com.yatharth.finance_tracker.dto.category.CategoryRequest;
+import com.yatharth.finance_tracker.dto.category.CategoryResponse;
+import com.yatharth.finance_tracker.dto.api.DeleteResponse;
 import com.yatharth.finance_tracker.entity.Category;
 import com.yatharth.finance_tracker.entity.User;
-import com.yatharth.finance_tracker.repository.CategoryRepository;
-import com.yatharth.finance_tracker.repository.UserRepository;
+import com.yatharth.finance_tracker.repository.category.CategoryRepository;
+import com.yatharth.finance_tracker.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;

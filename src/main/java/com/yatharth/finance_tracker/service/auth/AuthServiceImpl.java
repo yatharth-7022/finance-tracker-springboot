@@ -1,12 +1,12 @@
-package com.yatharth.finance_tracker.service;
+package com.yatharth.finance_tracker.service.auth;
 
-import com.yatharth.finance_tracker.dto.AuthResponse;
-import com.yatharth.finance_tracker.dto.LoginRequest;
-import com.yatharth.finance_tracker.dto.RegisterRequest;
+import com.yatharth.finance_tracker.dto.auth.AuthResponse;
+import com.yatharth.finance_tracker.dto.auth.LoginRequest;
+import com.yatharth.finance_tracker.dto.auth.RegisterRequest;
 import com.yatharth.finance_tracker.entity.User;
 import com.yatharth.finance_tracker.exception.InvalidCredentialsException;
 import com.yatharth.finance_tracker.exception.UserNotFoundException;
-import com.yatharth.finance_tracker.repository.UserRepository;
+import com.yatharth.finance_tracker.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

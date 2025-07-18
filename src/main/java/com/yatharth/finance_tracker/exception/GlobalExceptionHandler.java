@@ -1,6 +1,6 @@
 package com.yatharth.finance_tracker.exception;
 
-import com.yatharth.finance_tracker.dto.ApiResponse;
+import com.yatharth.finance_tracker.dto.api.ApiResponse;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

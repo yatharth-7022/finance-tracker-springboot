@@ -1,4 +1,4 @@
-package com.yatharth.finance_tracker.repository;
+package com.yatharth.finance_tracker.repository.category;
 
 import com.yatharth.finance_tracker.entity.Category;
 import com.yatharth.finance_tracker.entity.User;

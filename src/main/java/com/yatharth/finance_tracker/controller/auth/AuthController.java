@@ -1,10 +1,10 @@
-package com.yatharth.finance_tracker.controller;
+package com.yatharth.finance_tracker.controller.auth;
 
-import com.yatharth.finance_tracker.dto.ApiResponse;
-import com.yatharth.finance_tracker.dto.AuthResponse;
-import com.yatharth.finance_tracker.dto.LoginRequest;
-import com.yatharth.finance_tracker.dto.RegisterRequest;
-import com.yatharth.finance_tracker.service.AuthServiceImpl;
+import com.yatharth.finance_tracker.dto.api.ApiResponse;
+import com.yatharth.finance_tracker.dto.auth.AuthResponse;
+import com.yatharth.finance_tracker.dto.auth.LoginRequest;
+import com.yatharth.finance_tracker.dto.auth.RegisterRequest;
+import com.yatharth.finance_tracker.service.auth.AuthServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

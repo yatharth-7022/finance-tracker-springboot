@@ -1,11 +1,9 @@
-package com.yatharth.finance_tracker.dto;
+package com.yatharth.finance_tracker.dto.transaction;
 
-import com.yatharth.finance_tracker.entity.Transaction;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data

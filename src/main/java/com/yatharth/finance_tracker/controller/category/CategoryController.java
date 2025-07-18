@@ -1,11 +1,10 @@
-package com.yatharth.finance_tracker.controller;
+package com.yatharth.finance_tracker.controller.category;
 
-import com.yatharth.finance_tracker.dto.ApiResponse;
-import com.yatharth.finance_tracker.dto.CategoryRequest;
-import com.yatharth.finance_tracker.dto.CategoryResponse;
-import com.yatharth.finance_tracker.dto.DeleteResponse;
-import com.yatharth.finance_tracker.service.CategoryService;
-import com.yatharth.finance_tracker.service.CategoryServiceImpl;
+import com.yatharth.finance_tracker.dto.api.ApiResponse;
+import com.yatharth.finance_tracker.dto.category.CategoryRequest;
+import com.yatharth.finance_tracker.dto.category.CategoryResponse;
+import com.yatharth.finance_tracker.dto.api.DeleteResponse;
+import com.yatharth.finance_tracker.service.category.CategoryService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.yatharth.finance_tracker.service;
+package com.yatharth.finance_tracker.service.auth;
 
 import com.yatharth.finance_tracker.entity.User;
 import io.jsonwebtoken.Jwts;

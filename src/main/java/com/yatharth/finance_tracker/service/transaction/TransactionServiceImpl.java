@@ -1,14 +1,14 @@
-package com.yatharth.finance_tracker.service;
+package com.yatharth.finance_tracker.service.transaction;
 
-import com.yatharth.finance_tracker.dto.TransactionRequest;
-import com.yatharth.finance_tracker.dto.TransactionResponse;
+import com.yatharth.finance_tracker.dto.transaction.TransactionRequest;
+import com.yatharth.finance_tracker.dto.transaction.TransactionResponse;
 import com.yatharth.finance_tracker.entity.Category;
 import com.yatharth.finance_tracker.entity.Transaction;
 import com.yatharth.finance_tracker.entity.User;
 import com.yatharth.finance_tracker.enums.TransactionType;
-import com.yatharth.finance_tracker.repository.CategoryRepository;
-import com.yatharth.finance_tracker.repository.TransactionRepository;
-import com.yatharth.finance_tracker.repository.UserRepository;
+import com.yatharth.finance_tracker.repository.category.CategoryRepository;
+import com.yatharth.finance_tracker.repository.transaction.TransactionRepository;
+import com.yatharth.finance_tracker.repository.user.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;

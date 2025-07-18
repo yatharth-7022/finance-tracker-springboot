@@ -1,4 +1,4 @@
-package com.yatharth.finance_tracker.dto;
+package com.yatharth.finance_tracker.dto.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

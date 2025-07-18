@@ -1,8 +1,7 @@
-package com.yatharth.finance_tracker.service;
+package com.yatharth.finance_tracker.service.transaction;
 
-import com.yatharth.finance_tracker.dto.AuthResponse;
-import com.yatharth.finance_tracker.dto.TransactionRequest;
-import com.yatharth.finance_tracker.dto.TransactionResponse;
+import com.yatharth.finance_tracker.dto.transaction.TransactionRequest;
+import com.yatharth.finance_tracker.dto.transaction.TransactionResponse;
 
 import java.util.List;
 

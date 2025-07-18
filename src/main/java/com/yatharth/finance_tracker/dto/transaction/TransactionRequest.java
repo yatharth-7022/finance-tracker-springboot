@@ -1,4 +1,4 @@
-package com.yatharth.finance_tracker.dto;
+package com.yatharth.finance_tracker.dto.transaction;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

@@ -1,6 +1,7 @@
 package com.yatharth.finance_tracker.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -9,10 +10,15 @@ import java.time.LocalDateTime;
         @UniqueConstraint(columnNames = {"user_id","category_id","month","year"})
 })
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Budget {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id")

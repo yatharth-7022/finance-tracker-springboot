@@ -30,7 +30,7 @@ public class BudgetController {
         return ResponseEntity.ok(new ApiResponse<>(200, "Budget retrieved successfully", budgetService.getBudgetOfCurrentUser()));
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponse<String>> deleteBudget(@PathVariable Long id){
         budgetService.deleteBudgetByUserCategoryAndBudget(id);
         return ResponseEntity.ok(new ApiResponse<>(200, "Budget deleted successfully", null));

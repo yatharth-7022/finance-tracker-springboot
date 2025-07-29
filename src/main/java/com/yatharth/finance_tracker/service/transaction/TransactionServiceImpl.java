@@ -1,5 +1,6 @@
 package com.yatharth.finance_tracker.service.transaction;
 
+import com.yatharth.finance_tracker.ApplicationEvents.TransactionCreatedEvent;
 import com.yatharth.finance_tracker.dto.transaction.TransactionByCategoryResponse;
 import com.yatharth.finance_tracker.dto.transaction.TransactionRequest;
 import com.yatharth.finance_tracker.dto.transaction.TransactionResponse;
@@ -12,6 +13,8 @@ import com.yatharth.finance_tracker.repository.transaction.TransactionRepository
 import com.yatharth.finance_tracker.repository.user.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
@@ -22,10 +25,12 @@ import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class TransactionServiceImpl implements TransactionService {
     private final UserRepository userRepository;
     private final TransactionRepository transactionRepository;
     private final CategoryRepository categoryRepository;
+    private final ApplicationEventPublisher eventPublisher;
 
     @Override
     public TransactionResponse createTransaction(TransactionRequest request) {
@@ -34,6 +39,16 @@ public class TransactionServiceImpl implements TransactionService {
         Transaction transaction = Transaction.builder()
                 .description(request.getDescription()).amount(request.getAmount()).type(TransactionType.valueOf(request.getType().toUpperCase())).date(LocalDateTime.now()).category(category).user(user).build();
         Transaction savedTransaction = transactionRepository.save(transaction);
+        try{
+            log.info("  Publishing TransactionCreatedEvent for transaction id: {} and user id: {}",
+                    savedTransaction.getId() ,user.getId());
+            eventPublisher.publishEvent(
+                    new TransactionCreatedEvent(this,savedTransaction));
+
+            log.info("TransactionCreatedEvent published successfully!");
+        }catch(Exception e){
+            log.error("Error publishing TransactionCreatedEvent: ", e.getMessage());
+        }
         return new TransactionResponse(savedTransaction.getId(), savedTransaction.getDescription(), savedTransaction.getAmount(), savedTransaction.getDate(), savedTransaction.getType().name(), savedTransaction.getCategory().getId());
 
 
